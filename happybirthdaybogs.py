@@ -20,7 +20,6 @@ e2.grid(row=2,column=1)
 
 Button(master,text='Cancel',command=master.quit).grid(row=3,column=0,sticky=W,pady=4)
 Button(master,text='Tweet it!',command=newTweet).grid(row=3,column=1,sticky=W,pady=4)
-#mainloop()
 	
 def get_api(cfg):
   auth = tweepy.OAuthHandler(cfg['consumer_key'], cfg['consumer_secret'])
@@ -28,13 +27,12 @@ def get_api(cfg):
   return tweepy.API(auth)
 
 def main():
-  # Fill in the values noted in previous step here
   
   cfg = { 
-    "consumer_key"        : "n6H3XbvOZZYKTr98zewsjgRBM",
-    "consumer_secret"     : "uYhhGCnY4UzEIjD2E8uVh7mcvh12Pu7PlEruQjXLhRkPbF9fQl",
-    "access_token"        : "768155398306078720-1aEtTzq5MblfBSDqgMrFTeBQ2amTZL7",
-    "access_token_secret" : "R86hPq9Q18xeanX8XAN1iodYXN9DVgQbwrRMgaIJT0uFj" 
+    "consumer_key"        : " ",
+    "consumer_secret"     : " ",
+    "access_token"        : " ",
+    "access_token_secret" : " " 
     }
 
   mainloop()
@@ -50,15 +48,5 @@ def main():
 			sn=s.user.screen_name
 			m="@%s Hey!" % (sn)
 			s= api.update_status(m,s.id)
-  #tweet = "Happy birthday"+" @priya_bansal_19"+" I'm sending this tweet via Python, my first hand at tweepy!!!"
-  #status = api.update_status(status=tweet) 
-  #status = api.update_status(status='@'+username+" "+tweet1+" "+tweet2)
-  #status = api.update_status(status=tweet2)
-  '''user=api.me()
-  print('Name: '+user.name)
-  print('Location: '+user.location)
-  print('Friends: '+str(user.friends_count))'''
-  # Yes, tweet is called 'status' rather confusing
-
-if __name__ == "__main__":
+  if __name__ == "__main__":
   main()
